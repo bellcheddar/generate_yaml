@@ -1,6 +1,22 @@
-# generate_yaml.py
+# 📝 generate_yaml.py
+
+> **From a JSON of candidate SMILES to a folder of Boltz-2 input YAMLs, in one prompt.**
+
+![python](https://img.shields.io/badge/python-3.8+-3776AB?logo=python&logoColor=white) ![dependencies](https://img.shields.io/badge/dependencies-zero-00897B) ![output](https://img.shields.io/badge/output-Boltz--2%20YAML-467FF7) ![input](https://img.shields.io/badge/input-JSON%20SMILES-9b51e0) ![author](https://img.shields.io/badge/author-Marc%20C.%20Deller%2C%20D.Phil.-1C244B)
+
+<table>
+<tr>
+<td>🌐 <b>Website</b></td><td><a href="https://marcdeller.com" target="_blank" rel="noopener noreferrer">marcdeller.com</a></td>
+<td>✉️ <b>Contact</b></td><td><a href="mailto:marc@marcdeller.com">marc@marcdeller.com</a></td>
+<td>🐙 <b>GitHub</b></td><td><a href="https://github.com/bellcheddar/generate_yaml" target="_blank" rel="noopener noreferrer">bellcheddar/generate_yaml</a></td>
+</tr>
+</table>
+
+---
 
 A command-line utility for generating Boltz-2 / co-folding input YAML files from a batch of candidate SMILES stored in a JSON file. Designed to work with the output format produced by generative chemistry runs (e.g. fragment-based screening, de novo design) and feed directly into a Boltz-style ModelCIF prediction pipeline.
+
+Why it matters: generative chemistry runs spit out hundreds of candidate SMILES, but Boltz-2 wants one carefully structured YAML per compound, each pairing the ligand with a protein chain, a pocket constraint, and an affinity block. Hand-writing those is tedious and error-prone. generate_yaml.py reads the candidates straight from your JSON, prompts once for the protein context, and writes a clean, submission-ready YAML for every selected compound. It is useful for anyone bridging de novo design or fragment screening into a co-folding affinity pipeline: turn a screening output into a ready-to-run prediction batch in seconds, with stdlib-only portability and no dependencies to install.
 
 ---
 
@@ -73,3 +89,18 @@ Candidate numbering is **1-based** and follows the original key order in the JSO
 ## Output
 
 Files are written to the specified output directory, named sequentially by candidate index:
+
+---
+
+## 👤 Author
+
+**Marc C. Deller, D.Phil.**  
+Structural biologist & drug discovery scientist  
+
+<table>
+<tr>
+<td>🌐</td><td><a href="https://marcdeller.com" target="_blank" rel="noopener noreferrer">marcdeller.com</a></td>
+<td>✉️</td><td><a href="mailto:marc@marcdeller.com">marc@marcdeller.com</a></td>
+<td>🐙</td><td><a href="https://github.com/bellcheddar/generate_yaml" target="_blank" rel="noopener noreferrer">github.com/bellcheddar/generate_yaml</a></td>
+</tr>
+</table>
